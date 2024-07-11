@@ -31,10 +31,10 @@ const shortRun:ScoreItem[] = [
 
 // 1600米长跑数据
 const longRun:ScoreItem[] = [
-    {date: '2024-06-18', time: '15:34', score: '2m'},
-    {date: '2023-06-10', time: '15:34', score: '2.2m'},
-    {date: '2022-06-1', time: '15:34', score: '2.1m'},
-    {date: '2021-05-17', time: '15:34', score: '2.6m'},
+    {date: '2024-06-18', time: '15:34', score: '21min'},
+    {date: '2023-06-10', time: '15:34', score: '18.2min'},
+    {date: '2022-06-1', time: '15:34', score: '17.3min'},
+    {date: '2021-05-17', time: '15:34', score: '21.6min'},
 ]
 
 
