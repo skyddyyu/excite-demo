@@ -1,11 +1,11 @@
 "use client";
 import React from 'react';
 import * as echarts from 'echarts';
-import {useUpdateEffect} from "ahooks"
+import {useDeepCompareEffect} from "ahooks"
 
 interface ShowScoreData {
     category: string[],
-    score: string[],
+    score: number[],
 }
 
 // @ts-ignore
@@ -30,13 +30,12 @@ const ShowScoreChart = ({title, data, id}: { title: string, data: ShowScoreData,
         }
     };
 
-    useUpdateEffect(() => {
+    useDeepCompareEffect(() => {
         const chartDom = document.getElementById(id);
         const myChart = echarts.init(chartDom);
         myChart.setOption(option);
     }, [data, title, id])
 
-    // 111
     return (
         <div id={id}/>
     );
