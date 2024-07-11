@@ -1,12 +1,11 @@
-// 跳高数据
-
 interface ScoreItem {
     date: string,
     time: string,
     score: string,
 }
 
-const jumpHeight = [
+// 跳高数据
+const jumpHeight:ScoreItem[] = [
     {date: '2019-06-18', time: '15:34', score: '1.7m'},
     {date: '2019-06-10', time: '15:34', score: '1.5m'},
     {date: '2019-06-1', time: '15:34', score: '1.4m'},
@@ -14,7 +13,7 @@ const jumpHeight = [
 ]
 
 // 跳远数据
-const jumpMeter = [
+const jumpMeter:ScoreItem[] = [
     {date: '2024-06-18', time: '15:34', score: '2m'},
     {date: '2023-06-10', time: '15:34', score: '2.2m'},
     {date: '2022-06-1', time: '15:34', score: '2.1m'},
@@ -22,7 +21,7 @@ const jumpMeter = [
 ]
 
 // 100米短跑数据
-const shortRun = [
+const shortRun:ScoreItem[] = [
     {date: '2024-06-18', time: '15:34', score: '14.5s'},
     {date: '2023-06-10', time: '15:34', score: '14.2s'},
     {date: '2022-06-1', time: '15:34', score: '14.3s'},
@@ -31,7 +30,7 @@ const shortRun = [
 
 
 // 1600米长跑数据
-const longRun = [
+const longRun:ScoreItem[] = [
     {date: '2024-06-18', time: '15:34', score: '2m'},
     {date: '2023-06-10', time: '15:34', score: '2.2m'},
     {date: '2022-06-1', time: '15:34', score: '2.1m'},
