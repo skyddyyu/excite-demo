@@ -45,7 +45,7 @@ const ChartSection = () => {
     }, [jumpHeight, jumpMeter, shortRun, longRun])
 
     return (
-        <div className={'grid grid-rows-2 gap-10 grid-cols-2'}>
+        <div className={'grid gap-10  grid-cols-1  sm:grid-rows-2 sm:grid-cols-2'}>
             <ShowScoreChart data={chartData.jumpHeightData} title={'近十次跳高数据'} id={'showJumpHeight'}/>
             <ShowScoreChart data={chartData.jumpMeterData} title={'近十次跳远数据'} id={'showJumpMeter'}/>
             <ShowScoreChart data={chartData.shortRunData} title={'近十次短跑数据'} id={'showShortRun'}/>

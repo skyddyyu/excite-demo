@@ -9,7 +9,10 @@ const itemsArr = [
     '跳远',
     '100米短跑',
     '1600米长跑',
-]
+] as const;
+
+// 定义一个类型别名，它是数组元素类型的联合
+type ItemsType = typeof itemsArr[number];
 
 const resultMap = {
     '跳高': jumpHeight,
@@ -19,16 +22,16 @@ const resultMap = {
 }
 
 const HistoryScorePanel = () => {
-    const [curSelect, setCurSelect] = useState('跳高');
+    const [curSelect, setCurSelect] = useState<ItemsType>('跳高');
 
     return (
-        <div className={'flex flex-col'}>
+        <div className={'h-full flex flex-col'}>
             {/* tab切换区域 */}
-            <div className={'flex text-2xl gap-4 my-5'}>
+            <div className={'text-md flex gap-2 my-3 sm:text-2xl sm:gap-4  sm:my-5'}>
                 {
                     itemsArr.map((item, index) => {
                         return (
-                            <div key={index} className={cn("flex items-center justify-center cursor-pointer pr-4", {
+                            <div key={index} className={cn("flex items-center justify-center cursor-pointer pr-1 sm:pr-4", {
                                 'border-r border-solid border-black': index !== itemsArr.length - 1,
                                 'underline': item === curSelect,
                             })} onClick={() => {
@@ -44,7 +47,7 @@ const HistoryScorePanel = () => {
             {/* 需要一个上border作为分割线 */}
             {/* 数据展示区域    */}
             <div className="panelMain flex-1 overflow-hidden">
-                <div className="h-full grid grid-cols-3 grid-rows-4 text-3xl border-t-4 border-solid border-black p-7">
+                <div className="h-full grid grid-cols-3 grid-rows-4 text-md text-center border-t-4 border-solid border-black p-1 sm:p-7 sm:text-3xl">
                     <div>
                         记录日期
                     </div>
@@ -55,7 +58,7 @@ const HistoryScorePanel = () => {
                         成绩
                     </div>
                     {
-                        resultMap?.[curSelect]?.slice(0, 3).map((item: any, index: number) => {
+                        resultMap?.[curSelect]?.slice(0, 3)?.map((item: any, index: number) => {
                             return (
                                 <React.Fragment key={index}>
                                     <div>

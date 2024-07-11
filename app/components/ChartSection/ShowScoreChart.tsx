@@ -37,7 +37,7 @@ const ShowScoreChart = ({title, data, id}: { title: string, data: ShowScoreData,
     }, [data, title, id])
 
     return (
-        <div id={id}/>
+        <div className={'h-[220px] sm:h-auto bg-white'} id={id}/>
     );
 };
 
