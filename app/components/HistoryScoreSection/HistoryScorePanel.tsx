@@ -12,17 +12,20 @@ const itemsArr = [
 ] as const;
 
 // 定义一个类型别名，它是数组元素类型的联合
-type ItemsType = typeof itemsArr[number];
+export type ItemsType = typeof itemsArr[number];
 
-const resultMap = {
+export const resultMap = {
     '跳高': jumpHeight,
     '跳远': jumpMeter,
     '100米短跑': shortRun,
     '1600米长跑': longRun,
 }
 
-const HistoryScorePanel = () => {
-    const [curSelect, setCurSelect] = useState<ItemsType>('跳高');
+const HistoryScorePanel = ({curSelect, setCurSelect}: {
+    curSelect: ItemsType,
+    setCurSelect: (val: ItemsType) => void
+}) => {
+
 
     return (
         <div className={'h-full flex flex-col'}>
@@ -31,10 +34,11 @@ const HistoryScorePanel = () => {
                 {
                     itemsArr.map((item, index) => {
                         return (
-                            <div key={index} className={cn("flex items-center justify-center cursor-pointer pr-1 sm:pr-4", {
-                                'border-r border-solid border-black': index !== itemsArr.length - 1,
-                                'underline': item === curSelect,
-                            })} onClick={() => {
+                            <div key={index}
+                                 className={cn("flex items-center justify-center cursor-pointer pr-1 sm:pr-4", {
+                                     'border-r border-solid border-black': index !== itemsArr.length - 1,
+                                     'underline': item === curSelect,
+                                 })} onClick={() => {
                                 setCurSelect(item);
                             }}>
                                 <span>{item}</span>
@@ -47,7 +51,8 @@ const HistoryScorePanel = () => {
             {/* 需要一个上border作为分割线 */}
             {/* 数据展示区域    */}
             <div className="panelMain flex-1 overflow-hidden">
-                <div className="h-full grid grid-cols-3 grid-rows-4 text-md text-center border-t-4 border-solid border-black p-1 sm:p-7 sm:text-3xl">
+                <div
+                    className="h-full grid grid-cols-3 grid-rows-4 text-md text-center border-t-4 border-solid border-black p-1 sm:p-7 sm:text-3xl">
                     <div>
                         记录日期
                     </div>
