@@ -11,7 +11,7 @@ const user = users[0];
 const UserProfileSection = () => {
     return (
         <PanelWrapper title={'基本资料'} className={'flex gap-2'}>
-            <div className={'w-70px sm:w-[250px] relative'}>
+            <div className={'w-[70px] sm:w-[250px] relative'}>
                 <Image src={profileImg} fill alt={'profile image'}/>
             </div>
             <div className="text-md sm:text-2xl flex flex-col justify-between">

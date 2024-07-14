@@ -1,7 +1,7 @@
 "use client";
-import React, {useState} from 'react';
+import React from 'react';
 import {cn} from "@/app/lib/utils/tailwind";
-import {jumpHeight, jumpMeter, shortRun, longRun} from "@/app/data/checkUp";
+import {jumpHeight, jumpMeter, longRun, shortRun} from "@/app/data/checkUp";
 
 // 体检项数组
 const itemsArr = [
@@ -52,7 +52,7 @@ const HistoryScorePanel = ({curSelect, setCurSelect}: {
             {/* 数据展示区域    */}
             <div className="panelMain flex-1 overflow-hidden">
                 <div
-                    className="h-full grid grid-cols-3 grid-rows-4 text-md text-center border-t-4 border-solid border-black p-1 sm:p-7 sm:text-3xl">
+                    className="h-full grid grid-cols-3 grid-rows-4 text-[15px] text-center border-t-4 border-solid border-black p-1 sm:p-7 sm:text-3xl">
                     <div>
                         记录日期
                     </div>
